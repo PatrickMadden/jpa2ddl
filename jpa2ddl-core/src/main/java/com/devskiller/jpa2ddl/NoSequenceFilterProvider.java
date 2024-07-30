@@ -18,6 +18,14 @@ public class NoSequenceFilterProvider implements SchemaFilterProvider {
 		return NoSequenceSchemaFilter.INSTANCE;
 	}
 
+
+	@Override
+	public SchemaFilter getTruncatorFilter()
+	{
+		return NoSequenceSchemaFilter.INSTANCE;
+	}
+
+
 	@Override
 	public SchemaFilter getMigrateFilter() {
 		return NoSequenceSchemaFilter.INSTANCE;
@@ -37,8 +45,14 @@ public class NoSequenceFilterProvider implements SchemaFilterProvider {
 			return !isIdentifierTable(table);
 		}
 
-		private boolean isIdentifierTable(Table table) {
-			return !table.getInitCommands().isEmpty();
+		private boolean isIdentifierTable(Table table)
+		{
+			//return !table.getInitCommands().isEmpty();
+
+			//return table.getInitCommands()
+
+			// TODO - need to figure this out for hibernate 6
+			return false;
 		}
 
 		@Override

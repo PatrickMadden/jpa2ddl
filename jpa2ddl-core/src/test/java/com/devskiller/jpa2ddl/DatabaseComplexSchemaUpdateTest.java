@@ -1,10 +1,6 @@
 package com.devskiller.jpa2ddl;
 
-import com.devskiller.jpa2ddl.dialects.H2MySQL57Dialect;
-import com.devskiller.jpa2ddl.dialects.H2PostgreSQL95Dialect;
-import org.hibernate.dialect.MySQL57Dialect;
-import org.hibernate.dialect.Oracle12cDialect;
-import org.hibernate.dialect.PostgreSQL9Dialect;
+import org.hibernate.dialect.MySQLDialect;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
@@ -33,7 +29,7 @@ public class DatabaseComplexSchemaUpdateTest {
 				outputPath.toPath().resolve("v1__jpa2ddl_init.sql"));
 
 		Properties jpaProperties = new Properties();
-		jpaProperties.setProperty("hibernate.dialect", H2MySQL57Dialect.class.getCanonicalName());
+		jpaProperties.setProperty("hibernate.dialect", MySQLDialect.class.getCanonicalName());
 
 		SchemaGenerator schemaGenerator = new SchemaGenerator();
 

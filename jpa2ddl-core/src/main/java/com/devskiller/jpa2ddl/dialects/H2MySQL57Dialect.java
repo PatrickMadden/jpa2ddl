@@ -1,10 +1,11 @@
 package com.devskiller.jpa2ddl.dialects;
 
-import org.hibernate.dialect.MySQL57Dialect;
+import org.hibernate.dialect.MySQLDialect;
 import org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorH2DatabaseImpl;
 import org.hibernate.tool.schema.extract.spi.SequenceInformationExtractor;
 
-public class H2MySQL57Dialect extends MySQL57Dialect {
+public class H2MySQL57Dialect extends MySQLDialect
+{
 
 	@Override
 	public SequenceInformationExtractor getSequenceInformationExtractor() {

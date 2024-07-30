@@ -21,6 +21,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import jakarta.persistence.Persistence;
+
+
 class SchemaGenerator {
 
 	private static final String DB_URL = "jdbc:h2:mem:jpa2ddl";
@@ -53,11 +56,11 @@ class SchemaGenerator {
 			settings.getJpaProperties().setProperty("hibernate.connection.url", dbUrl);
 			settings.getJpaProperties().setProperty("hibernate.connection.username", "sa");
 			settings.getJpaProperties().setProperty("hibernate.connection.password", "");
-			settings.getJpaProperties().setProperty("javax.persistence.schema-generation.scripts.action", settings.getAction().toSchemaGenerationAction());
-			settings.getJpaProperties().setProperty("javax.persistence.schema-generation.database.action", settings.getAction().toSchemaGenerationAction());
+			settings.getJpaProperties().setProperty("jakarta.persistence.schema-generation.scripts.action", settings.getAction().toSchemaGenerationAction());
+			settings.getJpaProperties().setProperty("jakarta.persistence.schema-generation.database.action", settings.getAction().toSchemaGenerationAction());
 
-			settings.getJpaProperties().setProperty("javax.persistence.schema-generation.scripts.create-target", outputFile.getAbsolutePath());
-			settings.getJpaProperties().setProperty("javax.persistence.schema-generation.scripts.drop-target", outputFile.getAbsolutePath());
+			settings.getJpaProperties().setProperty("jakarta.persistence.schema-generation.scripts.create-target", outputFile.getAbsolutePath());
+			settings.getJpaProperties().setProperty("jakarta.persistence.schema-generation.scripts.drop-target", outputFile.getAbsolutePath());
 
 			settings.getJpaProperties().setProperty("hibernate.hbm2ddl.delimiter", settings.getDelimiter());
 			settings.getJpaProperties().setProperty("hibernate.format_sql", String.valueOf(settings.isFormatOutput()));
@@ -77,7 +80,9 @@ class SchemaGenerator {
 			Files.deleteIfExists(settings.getOutputPath().toPath());
 		}
 
-		if (settings.getGenerationMode() == GenerationMode.METADATA) {
+		if (settings.getGenerationMode() == GenerationMode.METADATA)
+		{
+			//Persistence.generateSchema();
 			SchemaExport export = new SchemaExport();
 			export.setFormat(settings.isFormatOutput());
 			export.setDelimiter(settings.getDelimiter());

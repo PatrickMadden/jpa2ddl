@@ -1,9 +1,9 @@
 package com.devskiller.jpa2ddl;
 
 import com.devskiller.jpa2ddl.dialects.H2PostgreSQL95Dialect;
-import org.hibernate.dialect.MySQL57Dialect;
-import org.hibernate.dialect.Oracle12cDialect;
-import org.hibernate.dialect.PostgreSQL10Dialect;
+import org.hibernate.dialect.MySQLDialect;
+import org.hibernate.dialect.OracleDialect;
+import org.hibernate.dialect.PostgreSQLDialect;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -30,7 +30,7 @@ public class DatabaseSchemaUpdateTest {
 				outputPath.toPath().resolve("v1__jpa2ddl_init.sql"));
 
 		Properties jpaProperties = new Properties();
-		jpaProperties.setProperty("hibernate.dialect", MySQL57Dialect.class.getCanonicalName());
+		jpaProperties.setProperty("hibernate.dialect", MySQLDialect.class.getCanonicalName());
 		jpaProperties.setProperty("hibernate.default_schema", "prod");
 
 		SchemaGenerator schemaGenerator = new SchemaGenerator();
@@ -57,7 +57,7 @@ public class DatabaseSchemaUpdateTest {
 				outputPath.toPath().resolve("v1__jpa2ddl_init.sql"));
 
 		Properties jpaProperties = new Properties();
-		jpaProperties.setProperty("hibernate.dialect", MySQL57Dialect.class.getCanonicalName());
+		jpaProperties.setProperty("hibernate.dialect", MySQLDialect.class.getCanonicalName());
 
 		SchemaGenerator schemaGenerator = new SchemaGenerator();
 
@@ -84,7 +84,7 @@ public class DatabaseSchemaUpdateTest {
 				outputPath.toPath().resolve("v1__jpa2ddl_init.sql"));
 
 		Properties jpaProperties = new Properties();
-		jpaProperties.setProperty("hibernate.dialect", MySQL57Dialect.class.getCanonicalName());
+		jpaProperties.setProperty("hibernate.dialect", MySQLDialect.class.getCanonicalName());
 
 		SchemaGenerator schemaGenerator = new SchemaGenerator();
 
@@ -102,7 +102,7 @@ public class DatabaseSchemaUpdateTest {
 		// given
 		File outputPath = tempFolder.newFolder();
 		Properties jpaProperties = new Properties();
-		jpaProperties.setProperty("hibernate.dialect", PostgreSQL10Dialect.class.getCanonicalName());
+		jpaProperties.setProperty("hibernate.dialect", PostgreSQLDialect.class.getCanonicalName());
 		jpaProperties.setProperty("hibernate.default_schema", "public");
 
 		SchemaGenerator schemaGenerator = new SchemaGenerator();
@@ -147,7 +147,7 @@ public class DatabaseSchemaUpdateTest {
 		// given
 		File outputPath = tempFolder.newFolder();
 		Properties jpaProperties = new Properties();
-		jpaProperties.setProperty("hibernate.dialect", Oracle12cDialect.class.getCanonicalName());
+		jpaProperties.setProperty("hibernate.dialect", OracleDialect.class.getCanonicalName());
 
 		SchemaGenerator schemaGenerator = new SchemaGenerator();
 

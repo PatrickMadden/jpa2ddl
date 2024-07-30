@@ -1,7 +1,7 @@
 package com.devskiller.jpa2ddl.complex;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 class Chapter {
