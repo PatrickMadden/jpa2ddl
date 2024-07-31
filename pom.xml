@@ -26,6 +26,10 @@
             <id>jkubrynski</id>
             <name>Jakub Kubrynski</name>
         </developer>
+        <developer>
+            <id>PatrickMadden</id>
+            <name>Patrick V. Madden</name>
+        </developer>
     </developers>
 
     <scm>
