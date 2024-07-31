@@ -16,9 +16,9 @@
     <packaging>takari-maven-plugin</packaging>
 
     <properties>
-        <mavenVersion>3.6.3</mavenVersion>
-        <mavenPluginVersion>3.6.0</mavenPluginVersion>
-        <it-project.version>2.9.2</it-project.version>
+        <mavenVersion>3.9.5</mavenVersion>
+        <mavenPluginVersion>3.13.1</mavenPluginVersion>
+        <it-project.version>3.0.3</it-project.version>
     </properties>
 
     <dependencies>
