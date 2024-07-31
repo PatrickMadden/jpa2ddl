@@ -40,7 +40,7 @@
         <module>jpa2ddl-maven-plugin</module>
         <module>jpa2ddl-querydsl-processor</module>
 <!--        <module>jpa2ddl-samples</module> &lt;!&ndash; samples module cannot be last because of the https://issues.sonatype.org/browse/NEXUS-9138 &ndash;&gt;-->
-        <module>jpa2ddl-gradle-plugin</module>
+<!--        <module>jpa2ddl-gradle-plugin</module>-->
     </modules>
 
     <distributionManagement>
@@ -193,6 +193,26 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>ts-solutions</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>ts-solutions-local-release</id>
+                    <name>ts-solutions-local-release</name>
+                    <url>https://repository.tomsawyer.com/artifactory/ts-solutions-local</url>
+                </repository>
+
+                <snapshotRepository>
+                    <id>ts-solutions-local-snapshots</id>
+                    <name>ts-solutions-local-snapshots</name>
+                    <url>https://repository.tomsawyer.com/artifactory/ts-solutions-local</url>
+                </snapshotRepository>
+            </distributionManagement>
+
         </profile>
     </profiles>
 
